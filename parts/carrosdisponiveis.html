@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slaup Hub - Aluguel de Carros Elétricos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .car-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .review-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Slaup Hub - Aluguel de Carros Elétricos</h1>
+    </header>
+
+    <main>
+        <section id="car-list">
+            <h2>Carros Elétricos Disponíveis</h2>
+            <!-- Carros serão adicionados dinamicamente via JavaScript -->
+        </section>
+
+        <section class="review-form">
+            <h2>Deixe sua Avaliação</h2>
+            <form id="review-form">
+                <input type="text" id="name" placeholder="Seu Nome" required>
+                <select id="car-select" required>
+                    <option value="">Selecione o Carro</option>
+                    <option value="BYD Han EV">BYD Han EV</option>
+                    <option value="Volvo XC40 Recharge">Volvo XC40 Recharge</option>
+                </select>
+                <textarea id="review" placeholder="Sua avaliação" required></textarea>
+                <input type="number" id="rating" min="1" max="5" placeholder="Nota (1-5)" required>
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const cars = [
+            { marca: "BYD", modelo: "Han EV", preco_aluguel: 300, disponivel: true },
+            { marca: "Volvo", modelo: "XC40 Recharge", preco_aluguel: 400, disponivel: true }
+        ];
+
+        // Função para renderizar carros
+        function renderCars() {
+            const carList = document.getElementById('car-list');
+            cars.forEach(car => {
+                const carCard = document.createElement('div');
+                carCard.classList.add('car-card');
+                carCard.innerHTML = `
+                    <h3>${car.marca} ${car.modelo}</h3>
+                    <p>Preço de Aluguel: R$ ${car.preco_aluguel}/dia</p>
+                    <p>Disponibilidade: ${car.disponivel ? 'Disponível' : 'Indisponível'}</p>
+                `;
+                carList.appendChild(carCard);
+            });
+        }
+
+        // Função para gerenciar avaliações
+        function setupReviewForm() {
+            const reviewForm = document.getElementById('review-form');
+            reviewForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const carSelect = document.getElementById('car-select').value;
+                const review = document.getElementById('review').value;
+                const rating = document.getElementById('rating').value;
+
+                // Aqui você poderia adicionar lógica para salvar avaliações
+                alert(`Avaliação enviada!\nNome: ${name}\nCarro: ${carSelect}\nNota: ${rating}/5\nComentário: ${review}`);
+                
+                // Limpar formulário após envio
+                reviewForm.reset();
+            });
+        }
+
+        // Inicializar página
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCars();
+            setupReviewForm();
+        });
+    </script>
+</body>
+</html>
