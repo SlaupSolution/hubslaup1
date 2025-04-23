@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pontos de Recarga - Slaup Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #00c78c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #00c78c;
+        }
+        .card p {
+            margin: 8px 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #00c78c;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pontos de Recarga Disponíveis</h1>
+
+    <div id="cards-container">
+        <!-- Cards will be dynamically added here -->
+    </div>
+
+    <form id="add-station-form">
+        <h2>Adicionar Novo Ponto de Recarga</h2>
+        <input type="text" id="location" placeholder="Localização" required />
+        <input type="number" id="average-price" placeholder="Valor Médio (R$)" min="0" step="0.01" required />
+        <button type="submit">Adicionar Ponto</button>
+    </form>
+
+    <script>
+        const stations = [
+            { location: "Centro da Cidade", averagePrice: 15.50 },
+            { location: "Shopping Plaza", averagePrice: 18.00 },
+            { location: "Estação Central", averagePrice: 14.75 }
+        ];
+
+        function renderStations() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+            stations.forEach(station => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${station.location}</h2>
+                    <p>Valor Médio: R$ ${station.averagePrice.toFixed(2)}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.getElementById('add-station-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const locationInput = document.getElementById('location');
+            const priceInput = document.getElementById('average-price');
+
+            const newStation = {
+                location: locationInput.value,
+                averagePrice: parseFloat(priceInput.value)
+            };
+
+            stations.push(newStation);
+            renderStations();
+
+            locationInput.value = '';
+            priceInput.value = '';
+        });
+
+        // Initial render
+        renderStations();
+    </script>
+</body>
+</html>
