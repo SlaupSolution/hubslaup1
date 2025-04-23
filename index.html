@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Slaup Hub - Compartilhe seus veículos elétricos</title>
     <style>
         * {
@@ -115,29 +115,6 @@
             font-size: 12px;
         }
         
-        .waiting-list {
-            max-width: 400px;
-            margin-top: 30px;
-        }
-        
-        .waiting-list p {
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        .form-group {
-            margin-bottom: 10px;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #444;
-            background-color: #333;
-            color: white;
-            border-radius: 5px;
-        }
-        
         .features {
             display: flex;
             justify-content: space-around;
@@ -218,99 +195,14 @@
             color: #666;
             line-height: 1.6;
         }
-        
-        .cars {
-            padding: 50px;
-        }
-        
-        .cars-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .filter {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .filter-btn {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #ddd;
-            background: white;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        
-        .filter-btn.active {
-            background-color: #00c78c;
+
+        footer {
+            background-color: #222;
             color: white;
-            border-color: #00c78c;
-        }
-        
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .car-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .car-image {
-            height: 180px;
-            background-color: #f5f5f5;
-            position: relative;
-        }
-        
-        .availability {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-        
-        .car-details {
-            padding: 20px;
-        }
-        
-        .car-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-        
-        .car-price {
-            color: #00c78c;
-            font-weight: bold;
-        }
-        
-        .car-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .car-spec {
-            display: flex;
-            align-items: center;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
             font-size: 14px;
-            color: #666;
-        }
-        
-        .car-spec i {
-            margin-right: 5px;
-            color: #999;
         }
     </style>
 </head>
@@ -321,9 +213,10 @@
         </div>
         <nav>
             <a href="#">Como Funciona</a>
-            <a href="#">Veículos</a>
+            <a href="carrosdisponiveis.html">Veículos</a>
             <a href="#">Pontos de Recarga</a>
-            <a href="#">Cadastre-se</a>
+            <a href="contato.html">Contato</a>
+            <a href="sobre.html">Sobre</a>
         </nav>
         <div class="auth-buttons">
             <button class="btn btn-outline">Entrar</button>
@@ -336,28 +229,6 @@
             <div class="tag">LANÇAMENTO EXCLUSIVO</div>
             <h1>Compartilhe seus veículos elétricos e gere renda extra</h1>
             <p>Slaup Hub conecta proprietários de veículos elétricos e pontos de recarga com pessoas que buscam mobilidade sustentável.</p>
-            
-            <div class="waiting-list">
-                <h3>Entre na lista de espera</h3>
-                <p>Seja um dos primeiros a acessar nossa plataforma quando for lançada.</p>
-                
-                <div class="form-group">
-                    <input type="text" placeholder="Nome completo">
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="E-mail">
-                </div>
-                <div class="form-group">
-                    <select>
-                        <option>Selecione sua preferência</option>
-                        <option>Alugar carro elétrico</option>
-                        <option>Compartilhar meu carro elétrico</option>
-                        <option>Disponibilizar ponto de recarga</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary" style="width: 100%;">Cadastrar</button>
-                <p style="font-size: 12px; margin-top: 10px;">Ao se cadastrar, você concorda com nossos <a href="#" style="color: #00c78c;">Termos de Uso</a> e <a href="#" style="color: #00c78c;">Política de Privacidade</a>.</p>
-            </div>
         </div>
         
         <div class="hero-image">
@@ -427,115 +298,9 @@
         <h2>Como funciona o Slaup Hub</h2>
         <p>Uma plataforma completa para proprietários de veículos elétricos e pontos de recarga que desejam gerar renda extra de forma sustentável.</p>
     </section>
-    
-    <section class="cars">
-        <div class="cars-header">
-            <h2>Veículos Disponíveis</h2>
-            <div class="filter">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Carros</button>
-                <button class="filter-btn">Motos</button>
-                <button class="filter-btn">Scooters</button>
-            </div>
-        </div>
-        
-        <div class="cars-grid">
-            <div class="car-card">
-                <div class="car-image">
-                    <img src="/api/placeholder/300/180" alt="Tesla Model 3" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="availability">Disponível</div>
-                </div>
-                <div class="car-details">
-                    <div class="car-title">
-                        <h3>Tesla Model 3</h3>
-                        <div class="car-price">R$ 350<span style="font-size: 12px; font-weight: normal;">/dia</span></div>
-                    </div>
-                    
-                    <div class="car-specs">
-                        <div class="car-spec">
-                            <i>⚡</i>
-                            <span>500 km de autonomia</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>🗓️</i>
-                            <span>2022</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>⚙️</i>
-                            <span>Automático</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>👤</i>
-                            <span>5 lugares</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="car-card">
-                <div class="car-image">
-                    <img src="/api/placeholder/300/180" alt="Volvo XC40 Recharge" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="availability">Disponível</div>
-                </div>
-                <div class="car-details">
-                    <div class="car-title">
-                        <h3>Volvo XC40 Recharge</h3>
-                        <div class="car-price">R$ 420<span style="font-size: 12px; font-weight: normal;">/dia</span></div>
-                    </div>
-                    
-                    <div class="car-specs">
-                        <div class="car-spec">
-                            <i>⚡</i>
-                            <span>418 km de autonomia</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>🗓️</i>
-                            <span>2023</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>⚙️</i>
-                            <span>AWD</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>👤</i>
-                            <span>5 lugares</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="car-card">
-                <div class="car-image">
-                    <img src="/api/placeholder/300/180" alt="Zero SR/F" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="availability">Disponível</div>
-                </div>
-                <div class="car-details">
-                    <div class="car-title">
-                        <h3>Zero SR/F</h3>
-                        <div class="car-price">R$ 180<span style="font-size: 12px; font-weight: normal;">/dia</span></div>
-                    </div>
-                    
-                    <div class="car-specs">
-                        <div class="car-spec">
-                            <i>⚡</i>
-                            <span>259 km de autonomia</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>🗓️</i>
-                            <span>2022</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>⚙️</i>
-                            <span>Motor de potência</span>
-                        </div>
-                        <div class="car-spec">
-                            <i>👤</i>
-                            <span>1 pessoa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <footer>
+        <p>© 2024 Slaup Hub. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
