@@ -208,6 +208,144 @@
             margin-top: 40px;
             font-size: 14px;
         }
+
+        /* Responsive styles for tablets */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 10px;
+            }
+
+            .auth-buttons {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 200px;
+                font-size: 100px;
+            }
+
+            .features {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+
+            .feature {
+                max-width: 100%;
+            }
+
+            .extra-income {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+
+            .extra-income-content {
+                max-width: 100%;
+            }
+
+            .how-it-works {
+                padding: 50px 20px;
+            }
+
+            .how-it-works h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            nav {
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .auth-buttons {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 20px 15px;
+            }
+
+            .hero h1 {
+                font-size: 22px;
+            }
+
+            .hero-image {
+                height: 150px;
+                font-size: 80px;
+            }
+
+            .features {
+                padding: 20px 15px;
+            }
+
+            .feature h3 {
+                font-size: 18px;
+            }
+
+            .feature p {
+                font-size: 12px;
+            }
+
+            .extra-income {
+                padding: 20px 15px;
+            }
+
+            .extra-income h2 {
+                font-size: 20px;
+            }
+
+            .extra-income p {
+                font-size: 14px;
+            }
+
+            .how-it-works {
+                padding: 30px 15px;
+            }
+
+            .how-it-works h2 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
